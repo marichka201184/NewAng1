@@ -9,7 +9,6 @@
 </div>
 
 <hr>
-<br>
 <div *ngIf="items">
   <div *ngFor="let item of items">
   ID:{{item.id}}--Price:{{item.price}}--Shop number:{{item.shop_name}}
@@ -18,17 +17,14 @@
         <label>New Price:<input type="text" formControlName="Newprice"></label>
         <button (click)="updateItem(shop.id, formItemUpdate)">Update item</button>
         </form>
-    <br>
     <hr>
 
 <hr>
- <br>
 <form [formGroup]="formItem">
   <label>Name:<input type="text" formControlName="name"></label>
   <label>Price:<input type="text" formControlName="price"></label>
   <label>Shop id:<input type="text" value={{shop.id}} formControlName="shop_name"></label>
    <button (click)="save(formItem)">Save item</button>
 </form>
- <br>
 <hr>
 </div>

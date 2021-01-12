@@ -27,6 +27,6 @@ URL = 'http://localhost:8000/shop/item';
   }
 
   getItemShop(id: number): Observable<IItem[]> {
-    return this.httpClient.get<IItem[]>(`${this.URL}/${id}`);
+    return this.httpClient.get<IItem[]>(`${this.URL}?shop_name=${id}`);
   }
 }
