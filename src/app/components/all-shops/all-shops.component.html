@@ -1,0 +1,16 @@
+<hr>
+<router-outlet></router-outlet>
+<form [formGroup]="form">
+  <label>Name:<input type="text" formControlName="name"></label>
+  <label>Address:<input type="text" formControlName="address"></label>
+   <button (click)="save(form)">Save</button>
+</form>
+<hr>
+<div>
+
+  <app-shop [shop]="s" *ngFor="let s of shopsList"></app-shop>
+
+</div>
+
+
+

@@ -1,0 +1,34 @@
+
+<div>{{shop.id}}--{{shop.name}}--{{shop.address}}
+<button  (click)="getItemByShopId(shop.id)">List of items</button>
+<button (click)="del(shop.id)">Delete Store</button>
+        <form [formGroup]="formUpdate">
+        <label>New Address:<input type="text" formControlName="Newaddress"></label>
+        <button (click)="update(shop.id, formUpdate)">Update store</button>
+        </form>
+</div>
+
+<hr>
+<br>
+<div *ngIf="items">
+  <div *ngFor="let item of items">
+  ID:{{item.id}}--Price:{{item.price}}--Shop number:{{item.shop_name}}
+    <button (click)="delItem(item.id)">Delete item</button>
+        <form [formGroup]="formItemUpdate">
+        <label>New Price:<input type="text" formControlName="Newprice"></label>
+        <button (click)="updateItem(shop.id, formItemUpdate)">Update item</button>
+        </form>
+    <br>
+    <hr>
+
+<hr>
+ <br>
+<form [formGroup]="formItem">
+  <label>Name:<input type="text" formControlName="name"></label>
+  <label>Price:<input type="text" formControlName="price"></label>
+  <label>Shop id:<input type="text" value={{shop.id}} formControlName="shop_name"></label>
+   <button (click)="save(formItem)">Save item</button>
+</form>
+ <br>
+<hr>
+</div>
