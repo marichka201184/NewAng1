@@ -7,6 +7,14 @@
         <button (click)="update(shop.id, formUpdate)">Update store</button>
         </form>
 </div>
+<hr>
+<form [formGroup]="formItem">
+  <label>Name:<input type="text" formControlName="name"></label>
+  <label>Price:<input type="text" formControlName="price"></label>
+  <label>Shop id:<input type="text" value={{shop.id}} formControlName="shop_name"></label>
+   <button (click)="save(formItem)">Save new item</button>
+</form>
+<hr>
 
 <hr>
 <div *ngIf="items">
@@ -19,12 +27,5 @@
         </form>
     <hr>
 
-<hr>
-<form [formGroup]="formItem">
-  <label>Name:<input type="text" formControlName="name"></label>
-  <label>Price:<input type="text" formControlName="price"></label>
-  <label>Shop id:<input type="text" value={{shop.id}} formControlName="shop_name"></label>
-   <button (click)="save(formItem)">Save item</button>
-</form>
-<hr>
+
 </div>
